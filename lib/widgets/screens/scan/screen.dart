@@ -1,6 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:trash_classifier/generated/l10n.dart';
+import '../../../ui/fonts.dart';
 import 'body.dart';
 import 'components/icon_button.dart';
 
@@ -13,7 +14,10 @@ class ScanScreen extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        title: Text($.scanTrash),
+        title: Text(
+            $.scanTrash,
+          style: AppFonts.buildScreenHeading(),
+        ),
         centerTitle: true,
         actionsPadding: const EdgeInsets.all(8.0),
         leading: CIconButton(
