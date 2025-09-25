@@ -15,7 +15,7 @@ class CBottomBar extends StatelessWidget{
         Navigator.pushReplacementNamed(context, AppRoutes.home);
         break;
       case 1:
-        Navigator.pushReplacementNamed(context, AppRoutes.scan);
+        Navigator.pushNamed(context, AppRoutes.scan);
         break;
       case 2:
         Navigator.pushReplacementNamed(context, AppRoutes.account);
@@ -27,7 +27,7 @@ class CBottomBar extends StatelessWidget{
   Widget build(BuildContext context) {
     return SizedBox(
       child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,8 +62,7 @@ class CBottomBar extends StatelessWidget{
         required IconData icon,
         IconData? activeIcon,
         double size = 35.0
-      }
-      ) {
+      }) {
 
     final bool isActive = currentIndex == index;
 
