@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:trash_classifier/config.dart';
 import 'package:trash_classifier/routes.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
+
+
 
 void main() {
   runApp(const TrashClassifier());
@@ -12,13 +16,24 @@ class TrashClassifier extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Trash Classifier',
+      title: AppConfig.appTitle,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: AppConfig.isProd ? false : true,
       onGenerateRoute: AppRoutes.generateRoute,
       initialRoute: AppRoutes.home,
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('uk'), // Ukrainian
+      ],
+      locale: const Locale('uk'),
     );
   }
 }
