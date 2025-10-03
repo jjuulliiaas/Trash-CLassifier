@@ -7,7 +7,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
 void main() {
-  runApp(const TrashClassifier());
+  runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => DetectionProvider()),
+        ],
+        child: const TrashClassifier()
+      )
+  );
 }
 
 class TrashClassifier extends StatelessWidget {
@@ -15,11 +22,7 @@ class TrashClassifier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => DetectionProvider()),
-      ],
-      child: MaterialApp(
+    return MaterialApp(
         title: AppConfig.appTitle,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -38,7 +41,6 @@ class TrashClassifier extends StatelessWidget {
           Locale('uk'), // Ukrainian
         ],
         locale: const Locale('uk'),
-      ),
-    );
+      );
   }
 }

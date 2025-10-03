@@ -12,6 +12,7 @@ class CameraRepository {
   CameraController? _cameraController;
   bool _isProcessing = false;
   bool _isStreaming = false;
+  DateTime? _lastProcessed;
 
   CameraRepository({
     required this.detectionProvider,
@@ -35,7 +36,7 @@ class CameraRepository {
 
   }
 
-  Future<void> startImageStream() async {
+  Future<void> startImageStream({int processEveryNFrames = 1}) async {
     if(_cameraController == null || !isCameraInit) return;
     if(_isStreaming) return;
     if(!tfLiteService.isLoaded) {
@@ -68,7 +69,17 @@ class CameraRepository {
   }
 
   Future<void> _processCameraImage(CameraImage frame) async {
+    DateTime now = DateTime.now();
+
+    if(_lastProcessed != null && now.difference(_lastProcessed!).inMilliseconds < 500) return;
+
+    _lastProcessed = now;
+
     if(_isProcessing) return;
+
+    _isProcessing = true;
+
+    final stopWatch = Stopwatch()..start();
 
     try {
       final input = imageHelper?.preprocess(frame);
@@ -79,10 +90,11 @@ class CameraRepository {
           confidence: resultMap['confidence'] as double
       );
 
-      detectionProvider?.setResult(result);
+      detectionProvider?.setResult(result, processingTimeMs: stopWatch.elapsedMilliseconds);
     } catch(e) {
       detectionProvider?.setError(e.toString());
     } finally {
+      stopWatch.stop();
       _isProcessing = false;
     }
 
