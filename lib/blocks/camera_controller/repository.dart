@@ -1,24 +1,8 @@
 import 'package:camera/camera.dart';
-import 'package:trash_classifier/blocks/detection/provider.dart';
-import 'package:trash_classifier/blocks/detection_result/model.dart';
-import 'package:trash_classifier/helpers/image_helper.dart';
-import 'package:trash_classifier/services/tflite_service.dart';
 
 class CameraRepository {
-  final DetectionProvider? detectionProvider;
-  final TFLiteService tfLiteService;
-  final ImageHelper? imageHelper;
-
   CameraController? _cameraController;
-  bool _isProcessing = false;
   bool _isStreaming = false;
-  DateTime? _lastProcessed;
-
-  CameraRepository({
-    required this.detectionProvider,
-    required this.tfLiteService,
-    required this.imageHelper,
-});
 
   CameraController? get cameraController => _cameraController;
   bool get isCameraInit => _cameraController?.value.isInitialized ?? false;
@@ -30,74 +14,28 @@ class CameraRepository {
         ResolutionPreset.medium,
         enableAudio: false
     );
-
     await _cameraController!.initialize();
-
-
   }
 
-  Future<void> startImageStream({int processEveryNFrames = 1}) async {
+  Future<void> startStream(Function(CameraImage) onFrame) async {
     if(_cameraController == null || !isCameraInit) return;
     if(_isStreaming) return;
-    if(!tfLiteService.isLoaded) {
-      detectionProvider?.setError('Model is not loaded');
-      return;
-    }
 
     _isStreaming = true;
 
-    await _cameraController!.startImageStream(_processCameraImage);
+    await _cameraController!.startImageStream(onFrame);
   }
 
-  Future<void> stopImageStream() async {
+  Future<void> stopStream() async {
     if(_cameraController == null || !_isStreaming) return;
-
-    try {
-      await _cameraController!.stopImageStream();
-    } catch(e) {
-      detectionProvider?.setError(e.toString());
-    } finally {
-      _isProcessing = false;
-      _isStreaming = false;
-    }
+    await _cameraController!.stopImageStream();
+    _isStreaming = false;
   }
 
   Future<void> dispose() async {
-    await stopImageStream();
+    await stopStream();
     await _cameraController?.dispose();
     _cameraController = null;
-  }
-
-  Future<void> _processCameraImage(CameraImage frame) async {
-    DateTime now = DateTime.now();
-
-    if(_lastProcessed != null && now.difference(_lastProcessed!).inMilliseconds < 500) return;
-
-    _lastProcessed = now;
-
-    if(_isProcessing) return;
-
-    _isProcessing = true;
-
-    final stopWatch = Stopwatch()..start();
-
-    try {
-      final input = imageHelper?.preprocess(frame);
-      final resultMap = await tfLiteService.runInference(input!);
-
-      final result = DetectionResultModel(
-          label: resultMap['label'] as String,
-          confidence: resultMap['confidence'] as double
-      );
-
-      detectionProvider?.setResult(result, processingTimeMs: stopWatch.elapsedMilliseconds);
-    } catch(e) {
-      detectionProvider?.setError(e.toString());
-    } finally {
-      stopWatch.stop();
-      _isProcessing = false;
-    }
-
   }
 
 }
