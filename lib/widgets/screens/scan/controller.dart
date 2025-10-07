@@ -35,17 +35,23 @@ class ScanController {
       detectionProvider.setError('Model is not loaded');
       return;
     }
+
+    if(cameraController == null || !cameraController!.value.isInitialized) {
+      detectionProvider.setError('Camera is not initialized');
+      return;
+    }
+
+    if (cameraRepo.isStreaming) return;
+
     await cameraRepo.startStream(_processFrame);
   }
 
-  Future<void> stopStream() async => cameraRepo.stopStream();
-
   void _processFrame(CameraImage frame) async {
-    final now = DateTime.now().millisecondsSinceEpoch;
-    if (_isProcessing || now - _lastFrameTime < frameIntervalMs) return;
+
+    if(!_canProcessFrame()) return;
 
     _isProcessing = true;
-    _lastFrameTime = now;
+    _lastFrameTime = DateTime.now().millisecondsSinceEpoch;
 
     try {
       final input = imageHelper.preprocess(frame);
@@ -64,5 +70,20 @@ class ScanController {
     }
   }
 
-  Future<void> dispose() async => cameraRepo.dispose();
+  bool _canProcessFrame() {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    return cameraController != null &&
+        cameraController!.value.isInitialized &&
+        cameraRepo.isStreaming &&
+        !_isProcessing &&
+        (now - _lastFrameTime >= frameIntervalMs);
+  }
+
+  Future<void> stopStream() async => cameraRepo.stopStream();
+
+  Future<void> dispose() async {
+    if(cameraRepo.isStreaming) await cameraRepo.stopStream();
+
+    tfLiteService.close();
+  }
 }

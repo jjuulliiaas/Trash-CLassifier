@@ -10,6 +10,8 @@ class DetectionModel {
   final double? confidence;
   final String? errorMessage;
 
+  final bool isCameraReady;
+
   final int lastProcessingTimeMs;
   final int  processedFrameCount;
 
@@ -20,6 +22,7 @@ class DetectionModel {
       this.label,
       this.confidence,
       this.errorMessage,
+      this.isCameraReady = false,
       this.lastProcessingTimeMs = 0,
       this.processedFrameCount = 0
 });
@@ -37,6 +40,7 @@ class DetectionModel {
     String? label,
     double? confidence,
     String? errorMessage,
+    bool? isCameraReady,
     int? lastProcessingTimeMs,
     int?  processedFrameCount,
 }) {
@@ -46,6 +50,7 @@ class DetectionModel {
         label: label ?? this.label,
         confidence: confidence ?? this.confidence,
         errorMessage: errorMessage ?? this.errorMessage,
+        isCameraReady: isCameraReady ?? this.isCameraReady,
         lastProcessingTimeMs: lastProcessingTimeMs ?? this.lastProcessingTimeMs,
         processedFrameCount: processedFrameCount ?? this.processedFrameCount
     );

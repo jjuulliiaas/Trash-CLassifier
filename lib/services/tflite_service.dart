@@ -15,35 +15,40 @@ class TFLiteService {
     this.labelsAssetPath = 'assets/model/labels.txt',
   });
 
-  Future<void> loadModel() async {
-    _interpreter = await Interpreter.fromAsset(modelAssetPath);
-    final rawLabels = await rootBundle.loadString(labelsAssetPath);
-    _labels = rawLabels
-        .split('\n')
-        .map((s) => s.trim())
-        .where((s) => s.isNotEmpty).toList();
-  }
-
   /// Getters
 
   bool get isLoaded => _interpreter != null && _labels!= null;
   List<String> get labels => _labels ?? [];
 
-  Future<Map<String, dynamic>> runInference(List input) async {
+  Future<void> loadModel() async {
+    if(_interpreter != null) return;
+
+    _interpreter = await Interpreter.fromAsset(modelAssetPath);
+
+    final rawLabels = await rootBundle.loadString(labelsAssetPath);
+    _labels = rawLabels
+        .split('\n')
+        .map((s) => s.trim())
+        .where((s) => s.isNotEmpty)
+        .toList();
+  }
+
+  Future<Map<String, dynamic>> runInference(List<List<List<List<double>>>> input) async {
     if(!isLoaded) {
       throw Exception('Model is not loaded.');
     }
-    final output = List.filled(_labels!.length, 0.0).reshape([1, _labels!.length]);
+
+    final output = List.generate(1, (_) => List.filled(_labels!.length, 0.0));
 
     _interpreter!.run(input, output);
 
-    final confidences = output[0] as List;
+    final confidences = output[0];
     int maxIndex = 0;
     double maxConfidence = confidences[0];
 
     for(int i = 1; i < confidences.length; i++) {
       if(confidences[i] > maxConfidence) {
-        maxIndex++;
+        maxIndex = i;
         maxConfidence = confidences[i];
       }
     }
@@ -56,8 +61,10 @@ class TFLiteService {
   }
 
   void close() {
-    _interpreter!.close();
-    _interpreter = null;
+    if(_interpreter != null) {
+      _interpreter!.close();
+      _interpreter = null;
+    }
   }
 
 }

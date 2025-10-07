@@ -8,6 +8,13 @@ class CameraPreviewWidget extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return CameraPreview(cameraController!);
+    if(cameraController == null || !cameraController!.value.isInitialized) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    return AspectRatio(
+      aspectRatio: cameraController!.value.aspectRatio,
+      child: CameraPreview(cameraController!),
+    );
   }
 }

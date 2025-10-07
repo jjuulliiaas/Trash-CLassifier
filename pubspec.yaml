@@ -37,6 +37,7 @@ flutter:
   assets:
    - assets/model/labels.txt
    - assets/model/trash_classifier.tflite
+   - assets/test/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

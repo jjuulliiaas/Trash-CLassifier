@@ -5,9 +5,11 @@ import '../detection_result/model.dart';
 
 class DetectionProvider extends ChangeNotifier {
   DetectionModel _state = const DetectionModel();
+  bool _isCameraReady = true;
 
   /// Getters & Setters
   DetectionModel get state => _state;
+  bool get isCameraReady => _isCameraReady;
 
   void setLoading({bool loading = true}) {
     _state = _state.copyWith(isModelLoading: loading, errorMessage: null);
@@ -29,6 +31,11 @@ class DetectionProvider extends ChangeNotifier {
       lastProcessingTimeMs: processingTimeMs,
       processedFrameCount: _state.processedFrameCount + 1
     );
+    notifyListeners();
+  }
+
+  void setCameraReady(bool value) {
+    _isCameraReady = value;
     notifyListeners();
   }
 

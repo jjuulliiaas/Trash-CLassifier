@@ -12,7 +12,7 @@ class CameraRepository {
     _cameraController = CameraController(
         cameraDescription,
         ResolutionPreset.medium,
-        enableAudio: false
+        enableAudio: false,
     );
     await _cameraController!.initialize();
   }
@@ -23,18 +23,32 @@ class CameraRepository {
 
     _isStreaming = true;
 
-    await _cameraController!.startImageStream(onFrame);
+    try {
+      await _cameraController!.startImageStream((frame) {
+        if (_cameraController!.value.isStreamingImages) {
+          onFrame(frame);
+        }
+      });
+    } catch (e) {
+      _isStreaming = false;
+      rethrow;
+    }
   }
 
   Future<void> stopStream() async {
     if(_cameraController == null || !_isStreaming) return;
-    await _cameraController!.stopImageStream();
-    _isStreaming = false;
+    try {
+      await _cameraController!.stopImageStream();
+    } finally {
+      _isStreaming = false;
+    }
   }
 
   Future<void> dispose() async {
-    await stopStream();
-    await _cameraController?.dispose();
+    if (_isStreaming) await stopStream();
+    if (_cameraController != null && _cameraController!.value.isInitialized) {
+      await _cameraController!.dispose();
+    }
     _cameraController = null;
   }
 

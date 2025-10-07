@@ -8,7 +8,7 @@ class ImageHelper {
 
   ImageHelper({
     this.inputSize = 224,
-    this.isQuantized = true
+    this.isQuantized = false
 });
 
   /// Convert CameraImage to Image (YUV => RGB)
@@ -90,10 +90,66 @@ class ImageHelper {
     return buffer;
   }
 
-  List preprocess(CameraImage cameraImage) {
+  List<List<List<List<double>>>> preprocess(CameraImage cameraImage) {
     final rgb = convertCameraImageToImage(cameraImage);
     final resized = resizeImage(rgb);
-    return imageToByteList(resized);
+
+    final buffer = isQuantized
+        ? _imageToUint8(resized).map((e) => e.toDouble()).toList()
+        : _imageToFloat32(resized).toList();
+
+    // [1, H, W, 3]
+    final result = List.generate(1, (_) =>
+        List.generate(inputSize, (y) =>
+            List.generate(inputSize, (x) => List.filled(3, 0.0))
+        )
+    );
+
+    int idx = 0;
+    for (int y = 0; y < inputSize; y++) {
+      for (int x = 0; x < inputSize; x++) {
+        result[0][y][x][0] = buffer[idx++];
+        result[0][y][x][1] = buffer[idx++];
+        result[0][y][x][2] = buffer[idx++];
+      }
+    }
+
+    return result;
+  }
+
+  List<List<List<List<double>>>> preprocessFromImage(img.Image image) {
+    final resized = resizeImage(image);
+
+    final result = List.generate(1, (_) =>
+        List.generate(inputSize, (_) =>
+            List.generate(inputSize, (_) => List.filled(3, 0.0))
+        )
+    );
+
+    if (isQuantized) {
+
+      final uint8List = _imageToUint8(resized);
+      int idx = 0;
+      for (int y = 0; y < inputSize; y++) {
+        for (int x = 0; x < inputSize; x++) {
+          result[0][y][x][0] = uint8List[idx++].toDouble();
+          result[0][y][x][1] = uint8List[idx++].toDouble();
+          result[0][y][x][2] = uint8List[idx++].toDouble();
+        }
+      }
+    } else {
+      final floatList = _imageToFloat32(resized);
+      int idx = 0;
+      for (int y = 0; y < inputSize; y++) {
+        for (int x = 0; x < inputSize; x++) {
+          result[0][y][x][0] = floatList[idx++];
+          result[0][y][x][1] = floatList[idx++];
+          result[0][y][x][2] = floatList[idx++];
+        }
+      }
+    }
+
+    return result;
   }
 
 
