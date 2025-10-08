@@ -24,7 +24,49 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accountScreenTitle": MessageLookupByLibrary.simpleMessage("Account"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Trash Classifier"),
+    "batteryName": MessageLookupByLibrary.simpleMessage("Battery"),
+    "biologicalName": MessageLookupByLibrary.simpleMessage("Organic waste"),
+    "cardboardName": MessageLookupByLibrary.simpleMessage("Cardboard"),
+    "clothesName": MessageLookupByLibrary.simpleMessage("Clothes"),
+    "glassName": MessageLookupByLibrary.simpleMessage("Glass"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Home"),
+    "metalName": MessageLookupByLibrary.simpleMessage("Metal"),
+    "paperName": MessageLookupByLibrary.simpleMessage("Paper"),
+    "plasticName": MessageLookupByLibrary.simpleMessage("Plastic"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Scan Trash"),
+    "shoesName": MessageLookupByLibrary.simpleMessage("Shoes"),
+    "taglineBattery": MessageLookupByLibrary.simpleMessage(
+      "⚡ Handle with care!",
+    ),
+    "taglineBiological": MessageLookupByLibrary.simpleMessage(
+      "🌱 Nature’s own cycle.",
+    ),
+    "taglineCardboard": MessageLookupByLibrary.simpleMessage(
+      "📦 Fold before recycling.",
+    ),
+    "taglineClothes": MessageLookupByLibrary.simpleMessage(
+      "👕 Reuse before you refuse.",
+    ),
+    "taglineGlass": MessageLookupByLibrary.simpleMessage(
+      "🥂 Fragile but recyclable.",
+    ),
+    "taglineMetal": MessageLookupByLibrary.simpleMessage(
+      "🔩 Strong. Recyclable. Eternal.",
+    ),
+    "taglinePaper": MessageLookupByLibrary.simpleMessage(
+      "📄 Write, recycle, repeat.",
+    ),
+    "taglinePlastic": MessageLookupByLibrary.simpleMessage(
+      "♻️ Think twice before single-use.",
+    ),
+    "taglineShoes": MessageLookupByLibrary.simpleMessage("👟 Walk green!"),
+    "taglineTrash": MessageLookupByLibrary.simpleMessage(
+      "🗑️ Last stop: landfill.",
+    ),
+    "taglineUnknown": MessageLookupByLibrary.simpleMessage(
+      "❓ Not sure what that is!",
+    ),
+    "trashName": MessageLookupByLibrary.simpleMessage("Other waste"),
+    "unknownName": MessageLookupByLibrary.simpleMessage("Unknown"),
   };
 }

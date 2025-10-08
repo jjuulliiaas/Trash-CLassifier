@@ -39,6 +39,9 @@ flutter:
    - assets/model/trash_classifier.tflite
    - assets/test/
 
+flutter_inl:
+  enable: true
+  class-name: L10n
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

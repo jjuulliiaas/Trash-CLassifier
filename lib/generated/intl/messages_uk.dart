@@ -24,7 +24,51 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accountScreenTitle": MessageLookupByLibrary.simpleMessage("Профіль"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Trash Classifier"),
+    "batteryName": MessageLookupByLibrary.simpleMessage("Батарейки"),
+    "biologicalName": MessageLookupByLibrary.simpleMessage("Органічні відходи"),
+    "cardboardName": MessageLookupByLibrary.simpleMessage("Картон"),
+    "clothesName": MessageLookupByLibrary.simpleMessage("Одяг"),
+    "glassName": MessageLookupByLibrary.simpleMessage("Скло"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Головна"),
+    "metalName": MessageLookupByLibrary.simpleMessage("Метал"),
+    "paperName": MessageLookupByLibrary.simpleMessage("Папір"),
+    "plasticName": MessageLookupByLibrary.simpleMessage("Пластик"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Скануйте сміття"),
+    "shoesName": MessageLookupByLibrary.simpleMessage("Взуття"),
+    "taglineBattery": MessageLookupByLibrary.simpleMessage(
+      "⚡ Обережно з батарейками!",
+    ),
+    "taglineBiological": MessageLookupByLibrary.simpleMessage(
+      "🌱 Природний цикл життя.",
+    ),
+    "taglineCardboard": MessageLookupByLibrary.simpleMessage(
+      "📦 Склади перед утилізацією.",
+    ),
+    "taglineClothes": MessageLookupByLibrary.simpleMessage(
+      "👕 Використай повторно перед тим, як викинути.",
+    ),
+    "taglineGlass": MessageLookupByLibrary.simpleMessage(
+      "🥂 Крихке, але переробне.",
+    ),
+    "taglineMetal": MessageLookupByLibrary.simpleMessage(
+      "🔩 Міцне. Вічне. Переробне.",
+    ),
+    "taglinePaper": MessageLookupByLibrary.simpleMessage(
+      "📄 Пиши, переробляй, повторюй.",
+    ),
+    "taglinePlastic": MessageLookupByLibrary.simpleMessage(
+      "♻️ Подумай двічі перед одноразовим використанням.",
+    ),
+    "taglineShoes": MessageLookupByLibrary.simpleMessage(
+      "👟 Крокуй екологічно!",
+    ),
+    "taglineTrash": MessageLookupByLibrary.simpleMessage(
+      "🗑️ Остання зупинка — сміттєзвалище.",
+    ),
+    "taglineUnknown": MessageLookupByLibrary.simpleMessage(
+      "❓ Невідомо тип сміття!",
+    ),
+    "trashName": MessageLookupByLibrary.simpleMessage("Інші відходи"),
+    "unknownName": MessageLookupByLibrary.simpleMessage("Неможливо визначити"),
   };
 }

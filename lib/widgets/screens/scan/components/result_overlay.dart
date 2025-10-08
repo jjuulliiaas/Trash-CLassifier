@@ -45,7 +45,7 @@ class ResultOverlay extends StatelessWidget {
     }
 
     if(state.isModelLoaded && state.label != null) {
-      return _buildResultOverlay(state.label!, state.confidence!, containerWidth);
+      return _buildResultOverlay(context, state.label!, state.confidence!, containerWidth);
     }
 
     return const SizedBox.shrink(key: ValueKey('empty_prod'));
@@ -55,7 +55,7 @@ class ResultOverlay extends StatelessWidget {
     final provider = context.watch<TestCameraProvider>();
 
     if(provider.label != null && provider.confidence != null) {
-      return _buildResultOverlay(provider.label!, provider.confidence!, containerWidth);
+      return _buildResultOverlay(context, provider.label!, provider.confidence!, containerWidth);
     }
 
     if(provider.isProcessing) {
@@ -65,13 +65,13 @@ class ResultOverlay extends StatelessWidget {
     return const SizedBox.shrink(key: ValueKey('empty_test'));
   }
 
-  Widget _buildResultOverlay(String label, double confidence, double containerWidth) {
+  Widget _buildResultOverlay(BuildContext context, String label, double confidence, double containerWidth) {
     final confidencePercent = (confidence * 100).toStringAsFixed(1);
     final category = categoryFromLabel(label);
-    final icon = category.icon;
-    final iconColor = category.iconAndLabelColor;
+    final name = category.name(context);
+    final iconColor = category.labelColor;
     final categoryColor = category.categoryColor;
-    final description = category.description;
+    final tagline = category.tagline(context);
 
     return Align(
       key: ValueKey(label),
@@ -100,16 +100,10 @@ class ResultOverlay extends StatelessWidget {
                         transitionBuilder: (child, animation) {
                           return ScaleTransition(scale: animation, child: child);
                         },
-                        // child: Icon(
-                        //   icon,
-                        //   key: ValueKey(icon),
-                        //   color: iconColor,
-                        //   size: 45,
-                        // ),
                       ),
                       const SizedBox(width: 8,),
                       Text(
-                        label.toUpperCase(),
+                        name.toUpperCase(),
                         style: AppFonts.buildCategoryHeading(
                             color: iconColor
                         ),
@@ -122,11 +116,13 @@ class ResultOverlay extends StatelessWidget {
                         color: iconColor
                     ),
                   ),
+                  const SizedBox(height: 16,),
                   Text(
-                    description,
+                    tagline,
                     style: AppFonts.buildCategoryDescription(
                         color: iconColor
                     ),
+                    textAlign: TextAlign.center,
                   )
                 ],
               ),

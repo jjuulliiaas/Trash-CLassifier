@@ -83,6 +83,176 @@ class S {
       args: [],
     );
   }
+
+  /// `⚡ Handle with care!`
+  String get taglineBattery {
+    return Intl.message(
+      '⚡ Handle with care!',
+      name: 'taglineBattery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🌱 Nature’s own cycle.`
+  String get taglineBiological {
+    return Intl.message(
+      '🌱 Nature’s own cycle.',
+      name: 'taglineBiological',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📦 Fold before recycling.`
+  String get taglineCardboard {
+    return Intl.message(
+      '📦 Fold before recycling.',
+      name: 'taglineCardboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `👕 Reuse before you refuse.`
+  String get taglineClothes {
+    return Intl.message(
+      '👕 Reuse before you refuse.',
+      name: 'taglineClothes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🥂 Fragile but recyclable.`
+  String get taglineGlass {
+    return Intl.message(
+      '🥂 Fragile but recyclable.',
+      name: 'taglineGlass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🔩 Strong. Recyclable. Eternal.`
+  String get taglineMetal {
+    return Intl.message(
+      '🔩 Strong. Recyclable. Eternal.',
+      name: 'taglineMetal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📄 Write, recycle, repeat.`
+  String get taglinePaper {
+    return Intl.message(
+      '📄 Write, recycle, repeat.',
+      name: 'taglinePaper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `♻️ Think twice before single-use.`
+  String get taglinePlastic {
+    return Intl.message(
+      '♻️ Think twice before single-use.',
+      name: 'taglinePlastic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `👟 Walk green!`
+  String get taglineShoes {
+    return Intl.message(
+      '👟 Walk green!',
+      name: 'taglineShoes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🗑️ Last stop: landfill.`
+  String get taglineTrash {
+    return Intl.message(
+      '🗑️ Last stop: landfill.',
+      name: 'taglineTrash',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `❓ Not sure what that is!`
+  String get taglineUnknown {
+    return Intl.message(
+      '❓ Not sure what that is!',
+      name: 'taglineUnknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Battery`
+  String get batteryName {
+    return Intl.message('Battery', name: 'batteryName', desc: '', args: []);
+  }
+
+  /// `Organic waste`
+  String get biologicalName {
+    return Intl.message(
+      'Organic waste',
+      name: 'biologicalName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cardboard`
+  String get cardboardName {
+    return Intl.message('Cardboard', name: 'cardboardName', desc: '', args: []);
+  }
+
+  /// `Clothes`
+  String get clothesName {
+    return Intl.message('Clothes', name: 'clothesName', desc: '', args: []);
+  }
+
+  /// `Glass`
+  String get glassName {
+    return Intl.message('Glass', name: 'glassName', desc: '', args: []);
+  }
+
+  /// `Metal`
+  String get metalName {
+    return Intl.message('Metal', name: 'metalName', desc: '', args: []);
+  }
+
+  /// `Paper`
+  String get paperName {
+    return Intl.message('Paper', name: 'paperName', desc: '', args: []);
+  }
+
+  /// `Plastic`
+  String get plasticName {
+    return Intl.message('Plastic', name: 'plasticName', desc: '', args: []);
+  }
+
+  /// `Shoes`
+  String get shoesName {
+    return Intl.message('Shoes', name: 'shoesName', desc: '', args: []);
+  }
+
+  /// `Other waste`
+  String get trashName {
+    return Intl.message('Other waste', name: 'trashName', desc: '', args: []);
+  }
+
+  /// `Unknown`
+  String get unknownName {
+    return Intl.message('Unknown', name: 'unknownName', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

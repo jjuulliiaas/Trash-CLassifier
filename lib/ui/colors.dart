@@ -20,7 +20,7 @@ class AppColors {
   static const Color lightBlue = Color.fromARGB(179, 228, 250, 253);
   static const Color lightViolet = Color.fromARGB(179, 246, 237, 253);
   static const Color lightIndigo = Color.fromARGB(179, 241, 243, 255);
-  static const Color lightBrown = Color.fromARGB(179, 197, 190, 190);
+  static const Color lightBrown = Color.fromARGB(179, 239, 231, 231);
   static const Color lightSaladColor = Color.fromARGB(178, 227, 251, 227);
   static const Color lightRed = Color.fromARGB(179, 253, 238, 238);
 

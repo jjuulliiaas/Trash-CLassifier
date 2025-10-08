@@ -1,66 +1,70 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:trash_classifier/generated/l10n.dart';
 
 import '../../blocks/trash_category/model.dart';
 import '../colors.dart';
 
 extension TrashCategoryExtension on TrashCategory{
 
-  String get description {
+  String name(BuildContext context) {
+    final $ = S.of(context);
+
     switch(this) {
       case TrashCategory.battery:
-        return '⚡ Handle with care!';
+        return $.batteryName;
       case TrashCategory.biological:
-        return '🌱 Nature’s own cycle.';
+        return $.biologicalName;
       case TrashCategory.cardboard:
-        return '📦 Fold before recycling.';
+        return $.cardboardName;
       case TrashCategory.clothes:
-        return '👕 Reuse before you refuse.';
+        return $.clothesName;
       case TrashCategory.glass:
-        return '🥂 Fragile but recyclable.';
+        return $.glassName;
       case TrashCategory.metal:
-        return '🔩 Strong. Recyclable. Eternal.';
+        return $.metalName;
       case TrashCategory.paper:
-        return '📄 Write, recycle, repeat.';
+        return $.paperName;
       case TrashCategory.plastic:
-        return '♻️ Think twice before single-use.';
+        return $.plasticName;
       case TrashCategory.shoes:
-        return '👟 Walk green!';
+        return $.shoesName;
       case TrashCategory.trash:
-        return '🗑️ Last stop: landfill.';
+        return $.trashName;
       default:
-        return '❓ Not sure what that is!';
+        return $.unknownName;
     }
   }
 
-  IconData get icon {
+  String tagline (BuildContext context) {
+    final $ = S.of(context);
+
     switch(this) {
       case TrashCategory.battery:
-        return FluentIcons.developer_board_lightning_20_filled;
+        return $.taglineBattery;
       case TrashCategory.biological:
-        return FluentIcons.plant_grass_20_filled;
+        return $.taglineBiological;
       case TrashCategory.cardboard:
-        return FluentIcons.box_20_filled;
+        return $.taglineCardboard;
       case TrashCategory.clothes:
-        return FluentIcons.clothes_hanger_20_filled;
+        return $.taglineClothes;
       case TrashCategory.glass:
-        return FluentIcons.drink_bottle_20_filled;
+        return $.taglineGlass;
       case TrashCategory.metal:
-        return FluentIcons.dumbbell_20_filled;
+        return $.taglineMetal;
       case TrashCategory.paper:
-        return FluentIcons.notepad_edit_20_filled;
+        return $.taglinePaper;
       case TrashCategory.plastic:
-        return FluentIcons.balloon_20_filled;
+        return $.taglinePlastic;
       case TrashCategory.shoes:
-        return FluentIcons.run_20_filled;
+        return $.taglineShoes;
       case TrashCategory.trash:
-        return FluentIcons.sanitize_20_filled;
+        return $.taglineTrash;
       default:
-        return FluentIcons.book_exclamation_mark_20_filled;
+        return $.taglineUnknown;
     }
   }
 
-  Color get iconAndLabelColor {
+  Color get labelColor {
     switch(this) {
       case TrashCategory.battery:
         return AppColors.primaryGrey;
