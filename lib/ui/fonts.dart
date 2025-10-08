@@ -12,4 +12,28 @@ class AppFonts {
     );
   }
 
+  static TextStyle buildCategoryHeading({Color color = AppColors.primaryBlack}) {
+    return GoogleFonts.nunito(
+      fontWeight: FontWeight.w900,
+      fontSize: 20,
+      color: color,
+    );
+  }
+
+  static TextStyle buildCategoryDescription({Color color = AppColors.primaryBlack}) {
+    return GoogleFonts.nunito(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: color,
+    );
+  }
+
+  static TextStyle buildConfidencePercent({Color color = AppColors.primaryBlack}) {
+    return GoogleFonts.nunito(
+      fontWeight: FontWeight.normal,
+      fontSize: 12,
+      color: color,
+    );
+  }
+
 }

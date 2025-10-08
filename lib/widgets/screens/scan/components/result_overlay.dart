@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trash_classifier/blocks/detection/provider.dart';
+import 'package:trash_classifier/blocks/trash_category/model.dart';
 import 'package:trash_classifier/config.dart';
 import 'package:trash_classifier/ui/colors.dart';
+import 'package:trash_classifier/ui/extensions/category_extension.dart';
 
 import '../../../../blocks/test_mode/provider.dart';
+import '../../../../ui/fonts.dart';
 
 class ResultOverlay extends StatelessWidget {
   const ResultOverlay({super.key});
@@ -14,78 +17,127 @@ class ResultOverlay extends StatelessWidget {
     final provider = context.watch<DetectionProvider>();
     final state = provider.state;
 
+    final screenWidth = MediaQuery.of(context).size.width;
+    final containerWidth = screenWidth * 0.7;
+
     return Positioned.fill(
         child: IgnorePointer(
           child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 200),
             child: AppConfig.isProd == true
-                ? _buildOverlayForProd(context)
-                : _buildOverlayForTest(context),
+                ? _buildOverlayForProd(context, containerWidth)
+                : _buildOverlayForTest(context, containerWidth),
           ),
         )
     );
   }
 
-  Widget _buildOverlayForProd(BuildContext context) {
+  Widget _buildOverlayForProd(BuildContext context, double containerWidth) {
     final provider = context.watch<DetectionProvider>();
     final state = provider.state;
 
     if(state.errorMessage != null) {
-      return _buildErrorOverlay(state.errorMessage!);
+      return _buildErrorOverlay(state.errorMessage!, containerWidth);
     }
 
     if(state.isModelLoading) {
-      return _buildProcessingOverlay();
+      return _buildProcessingOverlay(containerWidth);
     }
 
     if(state.isModelLoaded && state.label != null) {
-      return _buildResultOverlay(state.label!, state.confidence!);
+      return _buildResultOverlay(state.label!, state.confidence!, containerWidth);
     }
 
     return const SizedBox.shrink(key: ValueKey('empty_prod'));
   }
 
-  Widget _buildOverlayForTest(BuildContext context) {
+  Widget _buildOverlayForTest(BuildContext context, double containerWidth) {
     final provider = context.watch<TestCameraProvider>();
 
     if(provider.label != null && provider.confidence != null) {
-      return _buildResultOverlay(provider.label!, provider.confidence!);
+      return _buildResultOverlay(provider.label!, provider.confidence!, containerWidth);
     }
 
     if(provider.isProcessing) {
-      return _buildProcessingOverlay();
+      return _buildProcessingOverlay(containerWidth);
     }
 
     return const SizedBox.shrink(key: ValueKey('empty_test'));
   }
 
-  Widget _buildResultOverlay(String label, double confidence) {
+  Widget _buildResultOverlay(String label, double confidence, double containerWidth) {
     final confidencePercent = (confidence * 100).toStringAsFixed(1);
+    final category = categoryFromLabel(label);
+    final icon = category.icon;
+    final iconColor = category.iconAndLabelColor;
+    final categoryColor = category.categoryColor;
+    final description = category.description;
 
     return Align(
       key: ValueKey(label),
       alignment: Alignment.bottomCenter,
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: AppColors.lightGrey,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              'Результат: $label ($confidencePercent%)',
-              style: const TextStyle(color: Colors.white, fontSize: 18),
-            ),
+        child: AnimatedContainer(
+          width: containerWidth,
+            duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+          decoration: BoxDecoration(
+            color: categoryColor,
+            borderRadius: BorderRadius.circular(16),
           ),
+          padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 200),
+                        transitionBuilder: (child, animation) {
+                          return ScaleTransition(scale: animation, child: child);
+                        },
+                        // child: Icon(
+                        //   icon,
+                        //   key: ValueKey(icon),
+                        //   color: iconColor,
+                        //   size: 45,
+                        // ),
+                      ),
+                      const SizedBox(width: 8,),
+                      Text(
+                        label.toUpperCase(),
+                        style: AppFonts.buildCategoryHeading(
+                            color: iconColor
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    '$confidencePercent%',
+                    style: AppFonts.buildConfidencePercent(
+                        color: iconColor
+                    ),
+                  ),
+                  Text(
+                    description,
+                    style: AppFonts.buildCategoryDescription(
+                        color: iconColor
+                    ),
+                  )
+                ],
+              ),
         ),
       ),
     );
   }
 
-  Widget _buildProcessingOverlay() {
+  Widget _buildProcessingOverlay(double containerWidth) {
     return Container(
+      width: containerWidth,
       color: AppColors.primaryGreen,
       alignment: Alignment.center,
       child: Column(
@@ -99,8 +151,9 @@ class ResultOverlay extends StatelessWidget {
     );
   }
 
-  Widget _buildErrorOverlay(String message) {
+  Widget _buildErrorOverlay(String message, double containerWidth) {
     return Container(
+      width: containerWidth,
       key: const ValueKey('error'),
       color: Colors.red,
       alignment: Alignment.center,

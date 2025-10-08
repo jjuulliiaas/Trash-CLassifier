@@ -50,7 +50,7 @@ class _TestCameraModeState extends State<TestCameraMode> {
               builder: (context, provider, _) {
                 final currentImage = _controller.imagesPath[provider.currentIndex];
                 return AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 1000),
+                    duration: const Duration(milliseconds: 500),
                   child: Image.asset(
                     currentImage,
                     key: ValueKey(currentImage),
