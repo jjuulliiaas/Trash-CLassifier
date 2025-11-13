@@ -8,5 +8,8 @@ const testImages = [
   'assets/test/test7.jpg',
   'assets/test/test8.jpg',
   'assets/test/test9.jpg',
-  'assets/test/test10.jpg'
+  'assets/test/test10.jpg',
+  'assets/test/test11.JPG',
+  'assets/test/test12.JPG',
+  'assets/test/test13.JPG'
 ];

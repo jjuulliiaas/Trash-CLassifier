@@ -21,7 +21,7 @@ class ScanController {
     required this.tfLiteService,
     required this.imageHelper,
     required this.cameraRepo,
-    this.frameIntervalMs = 200,
+    this.frameIntervalMs = 600,
   });
 
   CameraController? get cameraController => cameraRepo.cameraController;
