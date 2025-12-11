@@ -71,7 +71,6 @@ class ResultOverlay extends StatelessWidget {
     final name = category.name(context);
     final iconColor = category.labelColor;
     final categoryColor = category.categoryColor;
-    final tagline = category.tagline(context);
 
     return Align(
       key: ValueKey(label),
@@ -117,13 +116,13 @@ class ResultOverlay extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16,),
-                  Text(
-                    tagline,
-                    style: AppFonts.buildCategoryDescription(
-                        color: iconColor
-                    ),
-                    textAlign: TextAlign.center,
-                  )
+                  // Text(
+                  //   tagline,
+                  //   style: AppFonts.buildCategoryDescription(
+                  //       color: iconColor
+                  //   ),
+                  //   textAlign: TextAlign.center,
+                  // )
                 ],
               ),
         ),

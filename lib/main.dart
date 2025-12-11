@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trash_classifier/blocks/detection/provider.dart';
+import 'package:trash_classifier/blocks/auth/provider.dart' as local_auth;
 import 'package:trash_classifier/config.dart';
 import 'package:trash_classifier/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:trash_classifier/services/auth_service.dart';
+import 'package:trash_classifier/services/firestore_service.dart';
+import 'blocks/auth/repository.dart';
 import 'generated/l10n.dart';
 
 void main() async {
@@ -12,10 +17,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
+  final authService = AuthService();
+  final firestoreService = FirestoreService();
+  final authRepository = AuthRepository(authService, firestoreService);
+
   runApp(
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => DetectionProvider()),
+          ChangeNotifierProvider(create: (_) => local_auth.AuthProvider(authRepository)),
         ],
         child: const TrashClassifier()
       )
