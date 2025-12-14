@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trash_classifier/blocks/sign_up/provider.dart';
 import 'package:trash_classifier/widgets/common/bottom_bar.dart';
 import '../../../generated/l10n.dart';
 import '../../../ui/fonts.dart';
@@ -11,16 +13,19 @@ class SignUpScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     final $ = S.of(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          $.signUp,
-          style: AppFonts.buildScreenHeading(),
+    return ChangeNotifierProvider(
+      create: (_) => SignUpProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            $.signUp,
+            style: AppFonts.buildScreenHeading(),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
+        body: const SignUpBody(),
+        bottomNavigationBar: CBottomBar(currentIndex: 0,),
       ),
-      body: const SignUpBody(),
-      bottomNavigationBar: CBottomBar(currentIndex: 0,),
     );
   }
 }

@@ -1,24 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trash_classifier/blocks/sign_up/provider.dart';
 import '../../../blocks/auth/provider.dart';
+import '../../../routes.dart';
 
 class SignUpController {
-  final BuildContext context;
-  final AuthProvider authProvider;
 
-  SignUpController(this.context, this.authProvider);
+  static Future<void> onTapSignUp(BuildContext context, GlobalKey<FormState> formKey) async {
+    final signUpProvider = Provider.of<SignUpProvider>(context, listen: false);
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
-  Future<void> register(String name, String email, String password) async {
-    print('Registering user with: $email / $password');
-    if (email.isEmpty || password.isEmpty) {
-      print('ERROR: Email or password is empty!');
-      return;
-    }
+    final isValid = formKey.currentState!.validate();
 
-    await authProvider.register(name, email, password);
+    if(!isValid) return;
 
-    if (authProvider.user != null) {
+    signUpProvider.isLoading = true;
+    signUpProvider.error = null;
+
+    try {
+      await authProvider.register(
+          signUpProvider.name.trim(),
+          signUpProvider.email.trim(),
+          signUpProvider.password.trim()
+      );
+
+      if(authProvider.user != null && context.mounted) {
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
+      }
+
+    } catch(e) {
       if(context.mounted) {
-        Navigator.pushReplacementNamed(context, '/home');
+        signUpProvider.error = e.toString();
+      }
+    } finally {
+      if(context.mounted) {
+        signUpProvider.isLoading = false;
       }
     }
   }

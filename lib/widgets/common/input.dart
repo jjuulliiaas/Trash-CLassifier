@@ -10,7 +10,8 @@ class CInputField extends StatelessWidget {
     required this.hint,
     required this.obscureText,
     required this.controller,
-    required this.validator
+    required this.validator,
+    this.onChanged
   });
 
   final String label;
@@ -18,6 +19,7 @@ class CInputField extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
 
 
   @override
@@ -26,6 +28,7 @@ class CInputField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: TextFormField(
         controller: controller,
+        onChanged: onChanged,
         validator: validator,
         cursorColor: AppColors.primaryGrey,
         obscureText: obscureText,

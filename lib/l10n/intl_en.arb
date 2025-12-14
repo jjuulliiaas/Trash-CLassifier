@@ -25,5 +25,14 @@
   "plasticName": "Plastic",
   "shoesName": "Shoes",
   "trashName": "Other waste",
-  "unknownName": "Unknown"
+  "unknownName": "Unknown",
+  "signUp": "Sign Up",
+  "yourName": "Your Name",
+  "yourEmail": "Your Email",
+  "yourPassword": "Your Password",
+  "alreadyHaveAccount": "Already have account?",
+  "signIn": "Sign In",
+  "isRequired": "This field is required",
+  "invalidEmail": "Invalid email format"
+
 }

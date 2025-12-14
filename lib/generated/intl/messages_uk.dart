@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accountScreenTitle": MessageLookupByLibrary.simpleMessage("Профіль"),
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Вже маєте акаунт?",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Trash Classifier"),
     "batteryName": MessageLookupByLibrary.simpleMessage("Батарейки"),
     "biologicalName": MessageLookupByLibrary.simpleMessage("Органічні відходи"),
@@ -30,11 +33,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "clothesName": MessageLookupByLibrary.simpleMessage("Одяг"),
     "glassName": MessageLookupByLibrary.simpleMessage("Скло"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Головна"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Неправильний формат електронної адреси",
+    ),
+    "isRequired": MessageLookupByLibrary.simpleMessage(
+      "Це поле є обов\'язковим",
+    ),
     "metalName": MessageLookupByLibrary.simpleMessage("Метал"),
     "paperName": MessageLookupByLibrary.simpleMessage("Папір"),
     "plasticName": MessageLookupByLibrary.simpleMessage("Пластик"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Скануйте сміття"),
     "shoesName": MessageLookupByLibrary.simpleMessage("Взуття"),
+    "signIn": MessageLookupByLibrary.simpleMessage("Увійти"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Зареєструватись"),
     "taglineBattery": MessageLookupByLibrary.simpleMessage(
       "⚡ Обережно з батарейками!",
     ),
@@ -70,5 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "trashName": MessageLookupByLibrary.simpleMessage("Інші відходи"),
     "unknownName": MessageLookupByLibrary.simpleMessage("Неможливо визначити"),
+    "yourEmail": MessageLookupByLibrary.simpleMessage("Електронна адреса"),
+    "yourName": MessageLookupByLibrary.simpleMessage("Ваше ім\'я"),
+    "yourPassword": MessageLookupByLibrary.simpleMessage("Пароль"),
   };
 }

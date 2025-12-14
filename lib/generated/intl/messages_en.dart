@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accountScreenTitle": MessageLookupByLibrary.simpleMessage("Account"),
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have account?",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Trash Classifier"),
     "batteryName": MessageLookupByLibrary.simpleMessage("Battery"),
     "biologicalName": MessageLookupByLibrary.simpleMessage("Organic waste"),
@@ -30,11 +33,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "clothesName": MessageLookupByLibrary.simpleMessage("Clothes"),
     "glassName": MessageLookupByLibrary.simpleMessage("Glass"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email format",
+    ),
+    "isRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "metalName": MessageLookupByLibrary.simpleMessage("Metal"),
     "paperName": MessageLookupByLibrary.simpleMessage("Paper"),
     "plasticName": MessageLookupByLibrary.simpleMessage("Plastic"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Scan Trash"),
     "shoesName": MessageLookupByLibrary.simpleMessage("Shoes"),
+    "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "taglineBattery": MessageLookupByLibrary.simpleMessage(
       "⚡ Handle with care!",
     ),
@@ -68,5 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "trashName": MessageLookupByLibrary.simpleMessage("Other waste"),
     "unknownName": MessageLookupByLibrary.simpleMessage("Unknown"),
+    "yourEmail": MessageLookupByLibrary.simpleMessage("Your Email"),
+    "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
+    "yourPassword": MessageLookupByLibrary.simpleMessage("Your Password"),
   };
 }

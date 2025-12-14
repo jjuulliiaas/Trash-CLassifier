@@ -25,5 +25,14 @@
   "plasticName": "Пластик",
   "shoesName": "Взуття",
   "trashName": "Інші відходи",
-  "unknownName": "Неможливо визначити"
+  "unknownName": "Неможливо визначити",
+  "signUp": "Зареєструватись",
+  "yourName": "Ваше ім'я",
+  "yourEmail": "Електронна адреса",
+  "yourPassword": "Пароль",
+  "alreadyHaveAccount": "Вже маєте акаунт?",
+  "signIn": "Увійти",
+  "isRequired": "Це поле є обов'язковим",
+  "invalidEmail": "Неправильний формат електронної адреси"
+
 }

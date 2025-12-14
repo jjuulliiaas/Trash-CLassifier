@@ -253,6 +253,66 @@ class S {
   String get unknownName {
     return Intl.message('Unknown', name: 'unknownName', desc: '', args: []);
   }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Your Name`
+  String get yourName {
+    return Intl.message('Your Name', name: 'yourName', desc: '', args: []);
+  }
+
+  /// `Your Email`
+  String get yourEmail {
+    return Intl.message('Your Email', name: 'yourEmail', desc: '', args: []);
+  }
+
+  /// `Your Password`
+  String get yourPassword {
+    return Intl.message(
+      'Your Password',
+      name: 'yourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message('Sign In', name: 'signIn', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get isRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'isRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email format`
+  String get invalidEmail {
+    return Intl.message(
+      'Invalid email format',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
