@@ -4,39 +4,30 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> signUp(String email, String password) async {
-    print("--- DEBUG START ---");
-    print("Raw email: '$email'");
-
-    // 1. Видаляємо ВСІ пробіли та невидимі символи (RegExp)
-    final cleanEmail = email.replaceAll(RegExp(r'\s+'), '').trim();
-
-    print("Clean email: '$cleanEmail'");
-    print("Length: ${cleanEmail.length}"); // Перевіряємо довжину
-
-    // Перевірка "на око": julia@gmail.com має 15 символів.
-    // Якщо покаже 16 або більше - там є прихований символ!
-
     try {
+      final cleanEmail = email.trim();
       final result = await _auth.createUserWithEmailAndPassword(
           email: cleanEmail,
           password: password
       );
-      print('User created: ${result.user?.uid}');
       return result.user;
     } catch (e) {
-      print("ERROR in AuthService: $e");
+      print("ERROR in AuthService (Sign Up): $e");
       rethrow;
     }
   }
 
-  // Future<User?> signUp(String email, String password) async {
-  //   final cleanEmail = email.trim();
-  //
-  //   final result = await _auth.createUserWithEmailAndPassword(
-  //       email: cleanEmail,
-  //       password: password
-  //   );
-  //   print('User created: ${result.user?.uid}');
-  //   return result.user;
-  // }
+  Future<User?> signIn(String email, String password) async {
+    try {
+      final cleanEmail = email.trim();
+      final result = await _auth.signInWithEmailAndPassword(
+          email: cleanEmail,
+          password: password
+      );
+      return result.user;
+    } catch(e) {
+      print("ERROR in AuthService (Sign In): $e");
+      rethrow;
+    }
+  }
 }

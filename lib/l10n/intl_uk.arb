@@ -33,6 +33,15 @@
   "alreadyHaveAccount": "Вже маєте акаунт?",
   "signIn": "Увійти",
   "isRequired": "Це поле є обов'язковим",
-  "invalidEmail": "Неправильний формат електронної адреси"
+  "invalidEmail": "Неправильний формат електронної адреси",
+  "errorUserNotFound": "Користувача з таким email не знайдено",
+  "errorWrongPassword": "Невірний пароль",
+  "errorEmailAlreadyInUse": "Цей email вже зареєстровано",
+  "errorInvalidEmail": "Некоректний формат email",
+  "errorWeakPassword": "Пароль занадто слабкий",
+  "errorTooManyRequests": "Забагато спроб. Спробуйте пізніше",
+  "errorNetworkRequestFailed": "Помилка з'єднання з інтернетом",
+  "errorUnknown": "Сталася невідома помилка"
+
 
 }

@@ -21,4 +21,12 @@ class AuthRepository {
     await _firestoreService.createUser(user);
     return user;
   }
+
+  Future<User?> login(String email, String password) async {
+    final appUser = await _auth.signIn(email, password);
+
+    if (appUser == null) return null;
+
+    return await _firestoreService.getUser(appUser.uid);
+  }
 }

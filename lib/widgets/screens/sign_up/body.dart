@@ -8,6 +8,7 @@ import '../../../generated/l10n.dart';
 import '../../../routes.dart';
 import '../../../ui/colors.dart';
 import '../../common/auth_switch_button.dart';
+import '../../common/error_banner.dart';
 import '../../common/filled_button.dart';
 import '../../common/input.dart';
 
@@ -46,18 +47,8 @@ class _SignUpBodyState extends State<SignUpBody> {
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (provider.error != null) ...[
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.only(bottom: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.red.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    provider.error!,
-                    style: const TextStyle(color: Colors.red),
-                    textAlign: TextAlign.center,
-                  ),
+                ErrorBanner(
+                  message: provider.error!,
                 ),
               ],
               CInputField(
@@ -86,6 +77,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                 hint: '',
                 obscureText: true,
               ),
+              const SizedBox(height: 24,),
               provider.isLoading
                   ? const CircularProgressIndicator(
                 color: AppColors.primaryGreen,
@@ -99,7 +91,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               ),
               AuthSwitchButton(
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, AppRoutes.home);
+                  Navigator.pushReplacementNamed(context, AppRoutes.signIn);
                 },
                 text: $.alreadyHaveAccount,
                 actionText: $.signIn,

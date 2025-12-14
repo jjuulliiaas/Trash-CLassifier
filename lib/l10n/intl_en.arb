@@ -33,6 +33,14 @@
   "alreadyHaveAccount": "Already have account?",
   "signIn": "Sign In",
   "isRequired": "This field is required",
-  "invalidEmail": "Invalid email format"
+  "invalidEmail": "Invalid email format",
+  "errorUserNotFound": "User with this email was not found",
+  "errorWrongPassword": "Incorrect password",
+  "errorEmailAlreadyInUse": "This email is already registered",
+  "errorInvalidEmail": "Invalid email format",
+  "errorWeakPassword": "The password is too weak",
+  "errorTooManyRequests": "Too many attempts. Please try again later",
+  "errorNetworkRequestFailed": "Network connection error",
+  "errorUnknown": "An unknown error occurred"
 
 }

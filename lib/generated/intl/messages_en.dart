@@ -31,6 +31,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "biologicalName": MessageLookupByLibrary.simpleMessage("Organic waste"),
     "cardboardName": MessageLookupByLibrary.simpleMessage("Cardboard"),
     "clothesName": MessageLookupByLibrary.simpleMessage("Clothes"),
+    "errorEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "This email is already registered",
+    ),
+    "errorInvalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email format",
+    ),
+    "errorNetworkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "Network connection error",
+    ),
+    "errorTooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "Too many attempts. Please try again later",
+    ),
+    "errorUnknown": MessageLookupByLibrary.simpleMessage(
+      "An unknown error occurred",
+    ),
+    "errorUserNotFound": MessageLookupByLibrary.simpleMessage(
+      "User with this email was not found",
+    ),
+    "errorWeakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password is too weak",
+    ),
+    "errorWrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Incorrect password",
+    ),
     "glassName": MessageLookupByLibrary.simpleMessage("Glass"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(

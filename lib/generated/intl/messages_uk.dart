@@ -31,6 +31,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "biologicalName": MessageLookupByLibrary.simpleMessage("Органічні відходи"),
     "cardboardName": MessageLookupByLibrary.simpleMessage("Картон"),
     "clothesName": MessageLookupByLibrary.simpleMessage("Одяг"),
+    "errorEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "Цей email вже зареєстровано",
+    ),
+    "errorInvalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Некоректний формат email",
+    ),
+    "errorNetworkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "Помилка з\'єднання з інтернетом",
+    ),
+    "errorTooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "Забагато спроб. Спробуйте пізніше",
+    ),
+    "errorUnknown": MessageLookupByLibrary.simpleMessage(
+      "Сталася невідома помилка",
+    ),
+    "errorUserNotFound": MessageLookupByLibrary.simpleMessage(
+      "Користувача з таким email не знайдено",
+    ),
+    "errorWeakPassword": MessageLookupByLibrary.simpleMessage(
+      "Пароль занадто слабкий",
+    ),
+    "errorWrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Невірний пароль",
+    ),
     "glassName": MessageLookupByLibrary.simpleMessage("Скло"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Головна"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(

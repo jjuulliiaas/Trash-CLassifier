@@ -313,6 +313,86 @@ class S {
       args: [],
     );
   }
+
+  /// `User with this email was not found`
+  String get errorUserNotFound {
+    return Intl.message(
+      'User with this email was not found',
+      name: 'errorUserNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password`
+  String get errorWrongPassword {
+    return Intl.message(
+      'Incorrect password',
+      name: 'errorWrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This email is already registered`
+  String get errorEmailAlreadyInUse {
+    return Intl.message(
+      'This email is already registered',
+      name: 'errorEmailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email format`
+  String get errorInvalidEmail {
+    return Intl.message(
+      'Invalid email format',
+      name: 'errorInvalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password is too weak`
+  String get errorWeakPassword {
+    return Intl.message(
+      'The password is too weak',
+      name: 'errorWeakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many attempts. Please try again later`
+  String get errorTooManyRequests {
+    return Intl.message(
+      'Too many attempts. Please try again later',
+      name: 'errorTooManyRequests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network connection error`
+  String get errorNetworkRequestFailed {
+    return Intl.message(
+      'Network connection error',
+      name: 'errorNetworkRequestFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unknown error occurred`
+  String get errorUnknown {
+    return Intl.message(
+      'An unknown error occurred',
+      name: 'errorUnknown',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

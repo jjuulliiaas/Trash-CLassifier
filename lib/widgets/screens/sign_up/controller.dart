@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trash_classifier/blocks/sign_up/provider.dart';
 import '../../../blocks/auth/provider.dart';
+import '../../../helpers/firebase_error_handler.dart';
 import '../../../routes.dart';
 
 class SignUpController {
@@ -30,7 +31,7 @@ class SignUpController {
 
     } catch(e) {
       if(context.mounted) {
-        signUpProvider.error = e.toString();
+        signUpProvider.error = FirebaseErrorHandler.getMessage(context, e);
       }
     } finally {
       if(context.mounted) {
