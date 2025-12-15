@@ -41,6 +41,9 @@
   "errorWeakPassword": "The password is too weak",
   "errorTooManyRequests": "Too many attempts. Please try again later",
   "errorNetworkRequestFailed": "Network connection error",
-  "errorUnknown": "An unknown error occurred"
-
+  "errorUnknown": "An unknown error occurred",
+  "pleaseEnterYourEmail": "Enter your email address and we will send you a link to reset your password.",
+  "resetPassword": "Reset password",
+  "forgotPassword": "Forgot password?",
+  "emailSendSuccessfully": "The email has been sent successfully"
 }

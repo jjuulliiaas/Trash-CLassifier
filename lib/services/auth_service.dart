@@ -30,4 +30,13 @@ class AuthService {
       rethrow;
     }
   }
+
+  Future<void> sendPasswordResetEmail({required String email}) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email.trim());
+    } catch (e) {
+      print("ERROR in AuthService (Reset Password): $e");
+      rethrow;
+    }
+  }
 }

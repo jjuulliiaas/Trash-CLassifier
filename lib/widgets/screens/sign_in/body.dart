@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:trash_classifier/ui/fonts.dart';
 import 'package:trash_classifier/widgets/screens/sign_in/validation.dart';
 
 import '../../../blocks/sign_in/provider.dart';
@@ -65,6 +66,23 @@ class _SignInBodyState extends State<SignInBody> {
               label: $.yourPassword,
               hint: '',
               obscureText: true,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, AppRoutes.resetPassword);
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.only(right: 16.0),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    $.forgotPassword,
+                    style: AppFonts.buildCategoryDescription(color: AppColors.primaryGreen),
+                  )
+              ),
             ),
             provider.isLoading
                 ? const CircularProgressIndicator(

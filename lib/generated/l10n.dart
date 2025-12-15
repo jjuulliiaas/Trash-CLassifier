@@ -393,6 +393,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter your email address and we will send you a link to reset your password.`
+  String get pleaseEnterYourEmail {
+    return Intl.message(
+      'Enter your email address and we will send you a link to reset your password.',
+      name: 'pleaseEnterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email has been sent successfully`
+  String get emailSendSuccessfully {
+    return Intl.message(
+      'The email has been sent successfully',
+      name: 'emailSendSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

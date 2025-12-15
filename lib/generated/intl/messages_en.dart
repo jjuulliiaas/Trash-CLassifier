@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "biologicalName": MessageLookupByLibrary.simpleMessage("Organic waste"),
     "cardboardName": MessageLookupByLibrary.simpleMessage("Cardboard"),
     "clothesName": MessageLookupByLibrary.simpleMessage("Clothes"),
+    "emailSendSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "The email has been sent successfully",
+    ),
     "errorEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "This email is already registered",
     ),
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorWrongPassword": MessageLookupByLibrary.simpleMessage(
       "Incorrect password",
     ),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password?"),
     "glassName": MessageLookupByLibrary.simpleMessage("Glass"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
@@ -66,6 +70,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "metalName": MessageLookupByLibrary.simpleMessage("Metal"),
     "paperName": MessageLookupByLibrary.simpleMessage("Paper"),
     "plasticName": MessageLookupByLibrary.simpleMessage("Plastic"),
+    "pleaseEnterYourEmail": MessageLookupByLibrary.simpleMessage(
+      "Enter your email address and we will send you a link to reset your password.",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Scan Trash"),
     "shoesName": MessageLookupByLibrary.simpleMessage("Shoes"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),

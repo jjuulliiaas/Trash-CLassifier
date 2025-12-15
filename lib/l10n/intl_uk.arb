@@ -41,7 +41,9 @@
   "errorWeakPassword": "Пароль занадто слабкий",
   "errorTooManyRequests": "Забагато спроб. Спробуйте пізніше",
   "errorNetworkRequestFailed": "Помилка з'єднання з інтернетом",
-  "errorUnknown": "Сталася невідома помилка"
-
-
+  "errorUnknown": "Сталася невідома помилка",
+  "pleaseEnterYourEmail": "Введіть свою електронну адресу, і ми надішлемо вам посилання для зміни пароля.",
+  "resetPassword": "Cкинути пароль",
+  "forgotPassword": "Забули пароль?",
+  "emailSendSuccessfully": "Лист успішно надіслано"
 }

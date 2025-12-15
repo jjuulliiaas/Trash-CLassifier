@@ -29,4 +29,8 @@ class AuthRepository {
 
     return await _firestoreService.getUser(appUser.uid);
   }
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    await _auth.sendPasswordResetEmail(email: email);
+  }
 }

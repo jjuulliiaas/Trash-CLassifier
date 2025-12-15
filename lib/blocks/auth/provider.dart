@@ -35,4 +35,13 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> resetPassword(String email) async {
+    try {
+      await _authRepository.sendPasswordResetEmail(email);
+    } catch (e) {
+      rethrow;
+    }
+
+  }
+
 }

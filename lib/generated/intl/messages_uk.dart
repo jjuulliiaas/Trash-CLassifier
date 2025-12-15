@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "biologicalName": MessageLookupByLibrary.simpleMessage("Органічні відходи"),
     "cardboardName": MessageLookupByLibrary.simpleMessage("Картон"),
     "clothesName": MessageLookupByLibrary.simpleMessage("Одяг"),
+    "emailSendSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Лист успішно надіслано",
+    ),
     "errorEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "Цей email вже зареєстровано",
     ),
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorWrongPassword": MessageLookupByLibrary.simpleMessage(
       "Невірний пароль",
     ),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Забули пароль?"),
     "glassName": MessageLookupByLibrary.simpleMessage("Скло"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Головна"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
@@ -66,6 +70,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "metalName": MessageLookupByLibrary.simpleMessage("Метал"),
     "paperName": MessageLookupByLibrary.simpleMessage("Папір"),
     "plasticName": MessageLookupByLibrary.simpleMessage("Пластик"),
+    "pleaseEnterYourEmail": MessageLookupByLibrary.simpleMessage(
+      "Введіть свою електронну адресу, і ми надішлемо вам посилання для зміни пароля.",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Cкинути пароль"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Скануйте сміття"),
     "shoesName": MessageLookupByLibrary.simpleMessage("Взуття"),
     "signIn": MessageLookupByLibrary.simpleMessage("Увійти"),
