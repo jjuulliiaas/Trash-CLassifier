@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,7 @@ import 'package:trash_classifier/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:trash_classifier/services/auth_service.dart';
 import 'package:trash_classifier/services/firestore_service.dart';
+import 'package:trash_classifier/widgets/screens/home/screen.dart';
 import 'blocks/auth/repository.dart';
 import 'generated/l10n.dart';
 
@@ -43,7 +45,6 @@ class TrashClassifier extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: AppConfig.isProd ? false : true,
         onGenerateRoute: AppRoutes.generateRoute,
-        initialRoute: AppRoutes.home,
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -54,7 +55,25 @@ class TrashClassifier extends StatelessWidget {
           Locale('en'), // English
           Locale('uk'), // Ukrainian
         ],
-        locale: const Locale('uk'),
+        locale: const Locale('en'),
+        home: const AuthWrapper(),
       );
+  }
+}
+
+class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+        stream: firebase_auth.FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(body: Center(child: CircularProgressIndicator()));
+          }
+          return const HomeScreen();
+        }
+    );
   }
 }

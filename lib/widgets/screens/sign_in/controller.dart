@@ -4,7 +4,6 @@ import 'package:trash_classifier/helpers/firebase_error_handler.dart';
 import '../../../blocks/auth/provider.dart';
 
 import '../../../blocks/sign_in/provider.dart';
-import '../../../routes.dart';
 
 class SignInController {
 
@@ -26,7 +25,7 @@ class SignInController {
       );
 
       if(authProvider.user != null && context.mounted) {
-        Navigator.pushReplacementNamed(context, AppRoutes.home);
+        Navigator.of(context).pop();
       }
     } catch(e) {
       if(context.mounted) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trash_classifier/blocks/sign_up/provider.dart';
-import 'package:trash_classifier/widgets/common/bottom_bar.dart';
 import '../../../generated/l10n.dart';
 import '../../../ui/fonts.dart';
 import 'body.dart';
@@ -24,7 +23,6 @@ class SignUpScreen extends StatelessWidget{
           centerTitle: true,
         ),
         body: const SignUpBody(),
-        bottomNavigationBar: CBottomBar(currentIndex: 0,),
       ),
     );
   }

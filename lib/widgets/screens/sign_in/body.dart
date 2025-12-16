@@ -99,7 +99,7 @@ class _SignInBodyState extends State<SignInBody> {
               onTap: () {
                 Navigator.pushReplacementNamed(context, AppRoutes.signUp);
               },
-              text: $.alreadyHaveAccount,
+              text: $.notHaveAccount,
               actionText: $.signUp,
             )
           ],

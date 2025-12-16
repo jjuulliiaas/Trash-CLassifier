@@ -31,12 +31,29 @@ class AuthService {
     }
   }
 
+  Future<void> signOut() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      print("ERROR in AuthService (Sign Out): $e");
+      rethrow;
+    }
+  }
+
   Future<void> sendPasswordResetEmail({required String email}) async {
     try {
       await _auth.sendPasswordResetEmail(email: email.trim());
     } catch (e) {
       print("ERROR in AuthService (Reset Password): $e");
       rethrow;
+    }
+  }
+
+  Future<void> updateUserName(String name) async {
+    final user = _auth.currentUser;
+    if(user != null) {
+      await user.updateDisplayName(name);
+      await user.reload();
     }
   }
 }

@@ -289,6 +289,16 @@ class S {
     );
   }
 
+  /// `Don't have an account yet?`
+  String get notHaveAccount {
+    return Intl.message(
+      'Don\'t have an account yet?',
+      name: 'notHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign In`
   String get signIn {
     return Intl.message('Sign In', name: 'signIn', desc: '', args: []);
@@ -432,6 +442,146 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Welcome to Trash Classifier! 🌱`
+  String get welcomeToTrashClassifier {
+    return Intl.message(
+      'Welcome to Trash Classifier! 🌱',
+      name: 'welcomeToTrashClassifier',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics unavailable`
+  String get statisticsUnavailable {
+    return Intl.message(
+      'Statistics unavailable',
+      name: 'statisticsUnavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in to see your results`
+  String get signInToSeeYourResults {
+    return Intl.message(
+      'Sign in to see your results',
+      name: 'signInToSeeYourResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan history`
+  String get scanHistory {
+    return Intl.message(
+      'Scan history',
+      name: 'scanHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan history is saved only in your account.`
+  String get scanHistorySaveOnlyInAccount {
+    return Intl.message(
+      'Scan history is saved only in your account.',
+      name: 'scanHistorySaveOnlyInAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friend`
+  String get friend {
+    return Intl.message('Friend', name: 'friend', desc: '', args: []);
+  }
+
+  /// `Hi, {name}! 👋`
+  String greeting(String name) {
+    return Intl.message(
+      'Hi, $name! 👋',
+      name: 'greeting',
+      desc: 'User greeting with name',
+      args: [name],
+    );
+  }
+
+  /// `Your statistics`
+  String get yourStatistics {
+    return Intl.message(
+      'Your statistics',
+      name: 'yourStatistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Charts will be here)`
+  String get chartsWillBeHere {
+    return Intl.message(
+      '(Charts will be here)',
+      name: 'chartsWillBeHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A list of recent scans will appear here...`
+  String get lastScansWillBeHere {
+    return Intl.message(
+      'A list of recent scans will appear here...',
+      name: 'lastScansWillBeHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unlock more opportunities`
+  String get openMoreOpportunities {
+    return Intl.message(
+      'Unlock more opportunities',
+      name: 'openMoreOpportunities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account to save your scan history and get detailed statistics on sorted waste.`
+  String get createAccountForSavingScans {
+    return Intl.message(
+      'Create an account to save your scan history and get detailed statistics on sorted waste.',
+      name: 'createAccountForSavingScans',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account`
+  String get createAccount {
+    return Intl.message(
+      'Create account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User`
+  String get user {
+    return Intl.message('User', name: 'user', desc: '', args: []);
+  }
+
+  /// `U`
+  String get u {
+    return Intl.message('U', name: 'u', desc: '', args: []);
+  }
+
+  /// `Sign out`
+  String get exit {
+    return Intl.message('Sign out', name: 'exit', desc: '', args: []);
   }
 }
 
