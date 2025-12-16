@@ -23,18 +23,61 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accountScreenTitle": MessageLookupByLibrary.simpleMessage("Account"),
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have account?",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Trash Classifier"),
     "batteryName": MessageLookupByLibrary.simpleMessage("Battery"),
     "biologicalName": MessageLookupByLibrary.simpleMessage("Organic waste"),
     "cardboardName": MessageLookupByLibrary.simpleMessage("Cardboard"),
     "clothesName": MessageLookupByLibrary.simpleMessage("Clothes"),
+    "emailSendSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "The email has been sent successfully",
+    ),
+    "errorEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "This email is already registered",
+    ),
+    "errorInvalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email format",
+    ),
+    "errorNetworkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "Network connection error",
+    ),
+    "errorTooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "Too many attempts. Please try again later",
+    ),
+    "errorUnknown": MessageLookupByLibrary.simpleMessage(
+      "An unknown error occurred",
+    ),
+    "errorUserNotFound": MessageLookupByLibrary.simpleMessage(
+      "User with this email was not found",
+    ),
+    "errorWeakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password is too weak",
+    ),
+    "errorWrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Incorrect password",
+    ),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password?"),
     "glassName": MessageLookupByLibrary.simpleMessage("Glass"),
     "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email format",
+    ),
+    "isRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "metalName": MessageLookupByLibrary.simpleMessage("Metal"),
     "paperName": MessageLookupByLibrary.simpleMessage("Paper"),
     "plasticName": MessageLookupByLibrary.simpleMessage("Plastic"),
+    "pleaseEnterYourEmail": MessageLookupByLibrary.simpleMessage(
+      "Enter your email address and we will send you a link to reset your password.",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "scanTrash": MessageLookupByLibrary.simpleMessage("Scan Trash"),
     "shoesName": MessageLookupByLibrary.simpleMessage("Shoes"),
+    "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "taglineBattery": MessageLookupByLibrary.simpleMessage(
       "⚡ Handle with care!",
     ),
@@ -68,5 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "trashName": MessageLookupByLibrary.simpleMessage("Other waste"),
     "unknownName": MessageLookupByLibrary.simpleMessage("Unknown"),
+    "yourEmail": MessageLookupByLibrary.simpleMessage("Your Email"),
+    "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
+    "yourPassword": MessageLookupByLibrary.simpleMessage("Your Password"),
   };
 }

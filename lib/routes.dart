@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:trash_classifier/widgets/screens/reset_password/screen.dart';
 import 'package:trash_classifier/widgets/screens/scan/screen.dart';
 import 'package:trash_classifier/widgets/screens/account/screen.dart';
 import 'package:trash_classifier/widgets/screens/home/screen.dart';
+import 'package:trash_classifier/widgets/screens/sign_in/screen.dart';
+import 'package:trash_classifier/widgets/screens/sign_up/screen.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver();
 
@@ -10,6 +13,9 @@ class AppRoutes {
   static const home = '/';
   static const scan = '/scan';
   static const account = '/account';
+  static const signUp = '/signUp';
+  static const signIn = '/signIn';
+  static const resetPassword = '/resetPassword';
 
   static Route<dynamic> noAnimationRoute(Widget page) {
     return PageRouteBuilder(
@@ -47,6 +53,15 @@ class AppRoutes {
 
       case account:
         return noAnimationRoute(const AccountScreen());
+
+      case signUp:
+        return noAnimationRoute(const SignUpScreen());
+
+      case signIn:
+        return noAnimationRoute(const SignInScreen());
+
+      case resetPassword:
+        return noAnimationRoute(const ResetPasswordScreen());
 
       default:
         return noAnimationRoute(const HomeScreen());

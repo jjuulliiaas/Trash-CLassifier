@@ -31,7 +31,15 @@ class AppFonts {
   static TextStyle buildConfidencePercent({Color color = AppColors.primaryBlack}) {
     return GoogleFonts.nunito(
       fontWeight: FontWeight.normal,
-      fontSize: 12,
+      fontSize: 20,
+      color: color,
+    );
+  }
+
+  static TextStyle buildInputLabel({Color color = AppColors.primaryBlack}) {
+    return GoogleFonts.nunito(
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
       color: color,
     );
   }

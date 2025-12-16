@@ -253,6 +253,186 @@ class S {
   String get unknownName {
     return Intl.message('Unknown', name: 'unknownName', desc: '', args: []);
   }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Your Name`
+  String get yourName {
+    return Intl.message('Your Name', name: 'yourName', desc: '', args: []);
+  }
+
+  /// `Your Email`
+  String get yourEmail {
+    return Intl.message('Your Email', name: 'yourEmail', desc: '', args: []);
+  }
+
+  /// `Your Password`
+  String get yourPassword {
+    return Intl.message(
+      'Your Password',
+      name: 'yourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message('Sign In', name: 'signIn', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get isRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'isRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email format`
+  String get invalidEmail {
+    return Intl.message(
+      'Invalid email format',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User with this email was not found`
+  String get errorUserNotFound {
+    return Intl.message(
+      'User with this email was not found',
+      name: 'errorUserNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password`
+  String get errorWrongPassword {
+    return Intl.message(
+      'Incorrect password',
+      name: 'errorWrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This email is already registered`
+  String get errorEmailAlreadyInUse {
+    return Intl.message(
+      'This email is already registered',
+      name: 'errorEmailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email format`
+  String get errorInvalidEmail {
+    return Intl.message(
+      'Invalid email format',
+      name: 'errorInvalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password is too weak`
+  String get errorWeakPassword {
+    return Intl.message(
+      'The password is too weak',
+      name: 'errorWeakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many attempts. Please try again later`
+  String get errorTooManyRequests {
+    return Intl.message(
+      'Too many attempts. Please try again later',
+      name: 'errorTooManyRequests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network connection error`
+  String get errorNetworkRequestFailed {
+    return Intl.message(
+      'Network connection error',
+      name: 'errorNetworkRequestFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unknown error occurred`
+  String get errorUnknown {
+    return Intl.message(
+      'An unknown error occurred',
+      name: 'errorUnknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email address and we will send you a link to reset your password.`
+  String get pleaseEnterYourEmail {
+    return Intl.message(
+      'Enter your email address and we will send you a link to reset your password.',
+      name: 'pleaseEnterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email has been sent successfully`
+  String get emailSendSuccessfully {
+    return Intl.message(
+      'The email has been sent successfully',
+      name: 'emailSendSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

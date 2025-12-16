@@ -80,7 +80,7 @@ class _ScanBodyState extends State<ScanBody> {
 
   @override
   Widget build(BuildContext context) {
-    final detectionProvider = context.watch<DetectionProvider>();
+    // final detectionProvider = context.watch<DetectionProvider>();
 
     if (AppConfig.isProd == false) {
       return const TestCameraMode();

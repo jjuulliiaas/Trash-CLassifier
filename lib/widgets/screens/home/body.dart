@@ -23,7 +23,8 @@ class HomeBody extends StatelessWidget{
         ),
         const SizedBox(height: 50,),
         const Text('Scan History'),
-         
+        const SizedBox(height: 50,),
+
       ],
     );
   }

@@ -11,7 +11,7 @@ class CameraRepository {
   Future<void> initCamera(CameraDescription cameraDescription) async {
     _cameraController = CameraController(
         cameraDescription,
-        ResolutionPreset.medium,
+        ResolutionPreset.low,
         enableAudio: false,
     );
     await _cameraController!.initialize();
