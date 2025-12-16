@@ -31,6 +31,7 @@
   "yourEmail": "Електронна адреса",
   "yourPassword": "Пароль",
   "alreadyHaveAccount": "Вже маєте акаунт?",
+  "notHaveAccount": "Ще не маєте акаунту?",
   "signIn": "Увійти",
   "isRequired": "Це поле є обов'язковим",
   "invalidEmail": "Неправильний формат електронної адреси",
@@ -45,5 +46,30 @@
   "pleaseEnterYourEmail": "Введіть свою електронну адресу, і ми надішлемо вам посилання для зміни пароля.",
   "resetPassword": "Cкинути пароль",
   "forgotPassword": "Забули пароль?",
-  "emailSendSuccessfully": "Лист успішно надіслано"
+  "emailSendSuccessfully": "Лист успішно надіслано",
+  "welcomeToTrashClassifier": "Вітаємо у Trash Classifier! \uD83C\uDF31",
+  "statisticsUnavailable": "Статистика недоступна",
+  "signInToSeeYourResults": "Увійдіть, щоб бачити свої результати",
+  "scanHistory": "Історія сканувань",
+  "scanHistorySaveOnlyInAccount": "Історія сканувань зберігається лише в акаунті.",
+  "friend": "Друже",
+  "greeting": "Привіт, {name}! 👋",
+  "@greeting": {
+    "description": "Привітання користувача з іменем",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yourStatistics": "Ваша Статистика",
+  "chartsWillBeHere": "(Тут будуть графіки)",
+  "lastScansWillBeHere": "Тут буде список останніх сканувань...",
+  "openMoreOpportunities": "Відкрийте більше можливостей",
+  "createAccountForSavingScans": "Створіть акаунт, щоб зберігати історію ваших сканувань та отримувати детальну статистику відсортованого сміття.",
+  "createAccount": "Створити акаунт",
+  "user": "Користувач",
+  "u": "U",
+  "exit": "Вийти з акаунту"
+
 }

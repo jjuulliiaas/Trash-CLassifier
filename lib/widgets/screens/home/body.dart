@@ -1,31 +1,29 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:trash_classifier/ui/colors.dart';
+import 'package:trash_classifier/widgets/screens/home/components/user_view.dart';
+
+import 'components/guest_view.dart';
 
 class HomeBody extends StatelessWidget{
   const HomeBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Center(
-          child: SizedBox(
-            width: 100,
-            height: 100,
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.primaryGreen
-              ),
-              child: const Text('Statistic'),
-            )
-          )
-        ),
-        const SizedBox(height: 50,),
-        const Text('Scan History'),
-        const SizedBox(height: 50,),
+    return StreamBuilder(
+        stream: FirebaseAuth.instance.userChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-      ],
+          final user = snapshot.data;
+
+          if(user == null) {
+            return const HomeGuestView();
+          } else {
+            return HomeUserView(user: user);
+          }
+        }
     );
   }
 }

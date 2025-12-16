@@ -31,6 +31,7 @@
   "yourEmail": "Your Email",
   "yourPassword": "Your Password",
   "alreadyHaveAccount": "Already have account?",
+  "notHaveAccount": "Don't have an account yet?",
   "signIn": "Sign In",
   "isRequired": "This field is required",
   "invalidEmail": "Invalid email format",
@@ -45,5 +46,29 @@
   "pleaseEnterYourEmail": "Enter your email address and we will send you a link to reset your password.",
   "resetPassword": "Reset password",
   "forgotPassword": "Forgot password?",
-  "emailSendSuccessfully": "The email has been sent successfully"
+  "emailSendSuccessfully": "The email has been sent successfully",
+  "welcomeToTrashClassifier": "Welcome to Trash Classifier! 🌱",
+  "statisticsUnavailable": "Statistics unavailable",
+  "signInToSeeYourResults": "Sign in to see your results",
+  "scanHistory": "Scan history",
+  "scanHistorySaveOnlyInAccount": "Scan history is saved only in your account.",
+  "friend": "Friend",
+  "greeting": "Hi, {name}! 👋",
+  "@greeting": {
+    "description": "User greeting with name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yourStatistics": "Your statistics",
+  "chartsWillBeHere": "(Charts will be here)",
+  "lastScansWillBeHere": "A list of recent scans will appear here...",
+  "openMoreOpportunities": "Unlock more opportunities",
+  "createAccountForSavingScans": "Create an account to save your scan history and get detailed statistics on sorted waste.",
+  "createAccount": "Create account",
+  "user": "User",
+  "u": "U",
+  "exit": "Sign out"
 }

@@ -22,4 +22,14 @@ class FirestoreService {
       rethrow;
     }
   }
+
+  Future<List<String>> getTrashCategories() async {
+    try {
+      final snapshot = await _db.collection('categories').get();
+      return snapshot.docs.map((doc) => doc.id).toList();
+    } catch(e) {
+      print("Error fetching categories: $e");
+      return ['plastic', 'metal', 'glass'];
+    }
+  }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:trash_classifier/widgets/common/bottom_bar.dart';
 import '../../../blocks/sign_in/provider.dart';
 import '../../../generated/l10n.dart';
 import '../../../ui/fonts.dart';
@@ -24,7 +23,6 @@ class SignInScreen extends StatelessWidget{
           centerTitle: true,
         ),
         body: SignInBody(),
-        bottomNavigationBar: CBottomBar(currentIndex: 0,),
       ),
     );
   }
