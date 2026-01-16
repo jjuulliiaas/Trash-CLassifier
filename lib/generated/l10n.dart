@@ -583,6 +583,36 @@ class S {
   String get exit {
     return Intl.message('Sign out', name: 'exit', desc: '', args: []);
   }
+
+  /// `W`
+  String get w {
+    return Intl.message('W', name: 'w', desc: '', args: []);
+  }
+
+  /// `M`
+  String get m {
+    return Intl.message('M', name: 'm', desc: '', args: []);
+  }
+
+  /// `Y`
+  String get y {
+    return Intl.message('Y', name: 'y', desc: '', args: []);
+  }
+
+  /// `No data 🍃`
+  String get noData {
+    return Intl.message('No data 🍃', name: 'noData', desc: '', args: []);
+  }
+
+  /// `Saved successfully!`
+  String get savedSuccessfully {
+    return Intl.message(
+      'Saved successfully!',
+      name: 'savedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

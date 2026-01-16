@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trash_classifier/blocks/detection/provider.dart';
 import 'package:trash_classifier/blocks/auth/provider.dart' as local_auth;
+import 'package:trash_classifier/blocks/statistics/provider.dart';
 import 'package:trash_classifier/config.dart';
 import 'package:trash_classifier/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -27,6 +28,7 @@ void main() async {
         providers: [
           ChangeNotifierProvider(create: (_) => DetectionProvider()),
           ChangeNotifierProvider(create: (_) => local_auth.AuthProvider(authRepository)),
+          ChangeNotifierProvider(create: (_) => StatisticsProvider()),
         ],
         child: const TrashClassifier()
       )

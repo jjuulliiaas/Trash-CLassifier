@@ -70,5 +70,11 @@
   "createAccount": "Create account",
   "user": "User",
   "u": "U",
-  "exit": "Sign out"
+  "exit": "Sign out",
+  "w": "W",
+  "m": "M",
+  "y": "Y",
+  "noData": "No data 🍃",
+  "savedSuccessfully": "Saved successfully!"
+
 }

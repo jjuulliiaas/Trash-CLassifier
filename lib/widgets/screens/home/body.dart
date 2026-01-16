@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:trash_classifier/widgets/screens/home/components/user_view.dart';
+import 'package:trash_classifier/widgets/screens/home/components/views/user_view.dart';
 
-import 'components/guest_view.dart';
+import 'components/views/guest_view.dart';
 
 class HomeBody extends StatelessWidget{
   const HomeBody({super.key});

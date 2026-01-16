@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../generated/l10n.dart';
-import '../../../../routes.dart';
-import '../../../../ui/colors.dart';
-import '../../../../ui/fonts.dart';
-import '../../../common/filled_button.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../../../routes.dart';
+import '../../../../../ui/colors.dart';
+import '../../../../../ui/fonts.dart';
+import '../../../../common/filled_button.dart';
 
 class HomeGuestView extends StatelessWidget {
   const HomeGuestView({super.key});

@@ -82,7 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lastScansWillBeHere": MessageLookupByLibrary.simpleMessage(
       "A list of recent scans will appear here...",
     ),
+    "m": MessageLookupByLibrary.simpleMessage("M"),
     "metalName": MessageLookupByLibrary.simpleMessage("Metal"),
+    "noData": MessageLookupByLibrary.simpleMessage("No data 🍃"),
     "notHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account yet?",
     ),
@@ -95,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your email address and we will send you a link to reset your password.",
     ),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
+    "savedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Saved successfully!",
+    ),
     "scanHistory": MessageLookupByLibrary.simpleMessage("Scan history"),
     "scanHistorySaveOnlyInAccount": MessageLookupByLibrary.simpleMessage(
       "Scan history is saved only in your account.",
@@ -144,9 +149,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "u": MessageLookupByLibrary.simpleMessage("U"),
     "unknownName": MessageLookupByLibrary.simpleMessage("Unknown"),
     "user": MessageLookupByLibrary.simpleMessage("User"),
+    "w": MessageLookupByLibrary.simpleMessage("W"),
     "welcomeToTrashClassifier": MessageLookupByLibrary.simpleMessage(
       "Welcome to Trash Classifier! 🌱",
     ),
+    "y": MessageLookupByLibrary.simpleMessage("Y"),
     "yourEmail": MessageLookupByLibrary.simpleMessage("Your Email"),
     "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
     "yourPassword": MessageLookupByLibrary.simpleMessage("Your Password"),

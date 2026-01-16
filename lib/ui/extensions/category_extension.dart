@@ -69,7 +69,7 @@ extension TrashCategoryExtension on TrashCategory{
       case TrashCategory.battery:
         return AppColors.primaryGrey;
       case TrashCategory.biological:
-        return AppColors.primaryGreen;
+        return AppColors.primaryViolet2;
       case TrashCategory.cardboard:
         return AppColors.primaryOrange;
       case TrashCategory.clothes:

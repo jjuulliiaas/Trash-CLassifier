@@ -14,23 +14,31 @@ class AuthRepository {
 
     await _auth.updateUserName(name);
 
-    List<String> categories = await _firestoreService.getTrashCategories();
-
-    if (categories.isEmpty) {
-      categories = ['plastic', 'metal', 'glass'];
-    }
+    final List<String> categories = [
+      'battery',
+      'biological',
+      'cardboard',
+      'clothes',
+      'glass',
+      'metal',
+      'paper',
+      'plastic',
+      'shoes',
+      'trash',
+    ];
 
     final Map<String, int> initialStats = {
       for (var category in categories) category: 0
     };
 
     final user = User(
-        uid: appUser!.uid,
-        name: name,
-        email: email,
-        createdAt: DateTime.now(),
-        categoryStats: initialStats,
+      uid: appUser!.uid,
+      name: name,
+      email: email,
+      createdAt: DateTime.now(),
+      categoryStats: initialStats,
     );
+
     await _firestoreService.createUser(user);
     return user;
   }

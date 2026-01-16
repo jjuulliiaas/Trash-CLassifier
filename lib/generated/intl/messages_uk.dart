@@ -82,7 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lastScansWillBeHere": MessageLookupByLibrary.simpleMessage(
       "Тут буде список останніх сканувань...",
     ),
+    "m": MessageLookupByLibrary.simpleMessage("M"),
     "metalName": MessageLookupByLibrary.simpleMessage("Метал"),
+    "noData": MessageLookupByLibrary.simpleMessage("Даних немає 🍃"),
     "notHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Ще не маєте акаунту?",
     ),
@@ -95,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Введіть свою електронну адресу, і ми надішлемо вам посилання для зміни пароля.",
     ),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Cкинути пароль"),
+    "savedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Збережено успішно!",
+    ),
     "scanHistory": MessageLookupByLibrary.simpleMessage("Історія сканувань"),
     "scanHistorySaveOnlyInAccount": MessageLookupByLibrary.simpleMessage(
       "Історія сканувань зберігається лише в акаунті.",
@@ -146,9 +151,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "u": MessageLookupByLibrary.simpleMessage("U"),
     "unknownName": MessageLookupByLibrary.simpleMessage("Неможливо визначити"),
     "user": MessageLookupByLibrary.simpleMessage("Користувач"),
+    "w": MessageLookupByLibrary.simpleMessage("Т"),
     "welcomeToTrashClassifier": MessageLookupByLibrary.simpleMessage(
       "Вітаємо у Trash Classifier! 🌱",
     ),
+    "y": MessageLookupByLibrary.simpleMessage("Р"),
     "yourEmail": MessageLookupByLibrary.simpleMessage("Електронна адреса"),
     "yourName": MessageLookupByLibrary.simpleMessage("Ваше ім\'я"),
     "yourPassword": MessageLookupByLibrary.simpleMessage("Пароль"),
